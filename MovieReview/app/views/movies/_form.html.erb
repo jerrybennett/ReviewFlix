@@ -1,0 +1,14 @@
+<%= form_for @movie, :html => { :multipart => true } do |f| %>
+
+  <%= f.label :title %>:<br />
+  <%= f.text_field :title, class: "form-control", placeholder: "Title" %><br />
+  
+  <%= f.label :description %>:<br />
+  <%= f.text_area :description, class: "form-control", placeholder: "Description" %><br />
+  
+  <%= select_tag(:genre_id, options_for_select(@genres), :prompt => "Select a Genre") %><br />
+  <%= f.file_field :movie_img %><br />
+
+  <%= f.submit %>
+  
+<% end %>

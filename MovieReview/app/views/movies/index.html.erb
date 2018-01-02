@@ -1,0 +1,24 @@
+<% if logged_in? %>
+  <%= link_to "Add Movie", new_movie_path, class: "btn btn-success" %>
+<% end %>
+
+<h1><%= params[:genre] %></h1>
+
+<% if @movies.count == 0 %>
+
+  <h3>There are no movies here. Add one!</h3>
+
+<% else %>
+
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-md-3 text-center">
+        <a href="/movies/<%= movie.id %>">
+          <%= image_tag movie.movie_img.url(:movie_index), class: "box-s" %>
+        </a>
+        <h4><%= movie.title %></h4>
+      </div>
+    <% end %>
+  </div>
+  
+<% end %>

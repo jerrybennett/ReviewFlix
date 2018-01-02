@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <%= link_to "ReView FLIX", root_path, class: "navbar-brand" %>
+    </div>
+
+    <ul class="nav navbar-nav navbar-left">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Genres <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <% Genre.all.each do |gen| %>
+            <li>
+              <%= link_to gen.name, movies_path(genre: gen.name), class: "link" %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <% if logged_in? %>
+        <li><%= link_to "Profile", current_user %></li>
+        <li><%= link_to "Update", edit_user_path(current_user) %></li>
+        <li><%= link_to "Sign Out", logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign Up", new_user_path %></li>
+        <li><%= link_to "Log In", login_path %></li>
+      <% end %>
+    </ul>
+
+  </div>
+</nav>
