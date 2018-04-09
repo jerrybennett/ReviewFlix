@@ -20,7 +20,7 @@ In order to run the app please do the following:
 • Ruby on Rails API
 • PaperClip gem to handle uploading of image files
 • Raty used to display star ratings
-• BCrypt to handle authenication
+• BCrypt to handle authentication
 
 ## License 
 The MIT License (MIT)
