@@ -10,6 +10,7 @@ Users can browse the site and see all movies, reviews and genres. Users can part
 In order to run the app please do the following:
 1. Fork or download
 2. Open the "MovieReview" file in terminal
+3. Run `bundle install`
 3. Run `rake db:migrate` to set up the database
 4. Run `rake db:seed` to set up genres
 5. Run `rails s` to start in browser
